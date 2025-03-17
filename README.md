@@ -1,28 +1,35 @@
-Spotify Music Recommendation System
- Overview
+ Spotify Music Recommendation System
 
-This project is a machine learning-based music recommendation system that predicts whether a song will be repeatedly played within a given timeframe using Spotify song attributes. It uses a Flask API to provide song recommendations based on user input.
+Overview
+
+This project is a machine learning-based music recommendation system that predicts whether a song will be repeatedly played within a given timeframe using Spotify song attributes. The model analyzes various features such as danceability, energy, loudness, and genre to determine a song's popularity.
+
  Dataset
 
-The dataset used contains song features with the following columns:
+The dataset consists of song metadata with the following features:
 
-['artist', 'song', 'duration_ms', 'explicit', 'year', 'popularity',
- 'danceability', 'energy', 'key', 'loudness', 'mode', 'speechiness',
- 'acousticness', 'instrumentalness', 'liveness', 'valence', 'tempo',
- 'genre']
+Numerical Attributes: Duration (ms), Danceability, Energy, Loudness, Tempo, Valence, Speechiness, etc.
 
-The target variable is popularity, which is binary:
+Categorical Attributes: Genre, Mode, Explicitness.
 
-1 → The song is repeatedly played within a month.
+Target Variable: Popularity (Binary: 1 = Popular, 0 = Not Popular).
 
-0 → The song is not repeatedly played.
+The model is trained to classify whether a song is likely to be played repeatedly within a given period.
 
-Features
 
-Predicts if a song will be popular based on its features.
+ Testing Locally
 
-Uses machine learning with a trained model.
+If testing locally → Open http://127.0.0.1:5001 in your browser.
 
-Flask REST API for making predictions.
+ Summary
 
-Scales and encodes input data before prediction.
+Implements a machine learning model for music recommendation.
+
+Uses Flask API for interaction.
+
+Scalable deployment with Gunicorn.
+
+Predicts song popularity based on key features.
+
+This project serves as a foundation for personalized music recommendations and can be extended further with real-time streaming data.
+
